@@ -10,6 +10,7 @@ colHeadings <- c("Date", "Time", "Global_active_power", "Global_reactive_power",
 colnames(energyDF) <- colHeadings
 
 ## change date and time classes and create one DateTime column
+library(lubridate)
 dt <- paste(energyDF$Date, energyDF$Time, sep = " ")
 dtCol <- dmy_hms(dt)
 
