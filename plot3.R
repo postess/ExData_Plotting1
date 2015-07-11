@@ -18,6 +18,8 @@ energyDF$DateTime <- dtCol
 
 ## Plot 3 active energy consumption of kitchen, laundry, and water meter/air conditioner 
 ## by minute on Feb 1 and 2, 2007
+
+png(file = "plot3.png", width = 480, height = 480)
 with(energyDF, plot(x = DateTime, y = Sub_metering_1, type = "l", ylab= "Energy sub metering", xlab = ""))
 with(energyDF, lines(DateTime, Sub_metering_2, col ="red"))
 with(energyDF, lines(DateTime, Sub_metering_3, col ="blue"))
@@ -25,5 +27,4 @@ with(energyDF, lines(DateTime, Sub_metering_3, col ="blue"))
 ## add legend
 legend("topright", col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty = c(1,1,1), cex = .65)
 
-dev.copy(png, file = "plot3.png")
 dev.off()
